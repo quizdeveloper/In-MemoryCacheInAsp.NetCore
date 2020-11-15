@@ -1,0 +1,20 @@
+﻿@model List<ArticleModel>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@if (Model != null && Model.Any())
+{
+    <div class="list-image">
+        <ul>
+            @foreach (var item in Model)
+            {
+                <li>
+                    <p>@item.Id</p>
+                    <img src="@item.ImageUrl" />
+                    <h2>@item.Title</h2>
+                </li>
+            }
+        </ul>
+    </div>
+}
